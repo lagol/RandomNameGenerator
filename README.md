@@ -1,2 +1,2 @@
 # RandomNameGenerator
-a random name generator
+A random name generator
