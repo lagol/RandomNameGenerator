@@ -2,6 +2,8 @@ package com.maxjacobi.randomnamegenerator;
 
 import java.util.Random;
 
+//TODO add intelligent vocal placement
+
 public class RandomName {
     final String chars = "abcdefghijklmnopqrstuvwxyz";
     final Random random = new Random();
