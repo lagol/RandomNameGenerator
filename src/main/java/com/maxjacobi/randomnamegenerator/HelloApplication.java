@@ -9,6 +9,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class HelloApplication extends Application {
+    public TextArea textArea;
+
     @Override
     public void start(Stage stage) {
 
@@ -16,7 +18,7 @@ public class HelloApplication extends Application {
 
         Button button = new Button("New random names");
 
-        TextArea textArea = new TextArea();
+        textArea = new TextArea();
         textArea.setEditable(false);
 
         VBox root = new VBox(label,button,textArea);
@@ -26,9 +28,21 @@ public class HelloApplication extends Application {
         stage.setTitle("RandomNameGenerator");
         stage.setScene(scene);
         stage.show();
+
+        newRandomNames(10,6);
     }
 
     public static void main(String[] args) {
         launch();
+    }
+
+    public void newRandomNames(int number, int length) {
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i <= number; i++) {
+            builder.append(new RandomName(length).getName()).append("\n");
+        }
+
+        textArea.setText(builder.toString().trim());
     }
 }
